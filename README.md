@@ -1,5 +1,5 @@
 # CME292 Advanced MATLAB for Scientific Computing
-### Winter Quarter 2022, offered by Stanford ICME
+### Winter Quarter 2022, offered by Stanford ICME in collaboration with Mathworks
 Schedule: Winter 2022, Jan 3rd-Jan 26th, Mon/Wed 5:30-7:00pm 
 
 Location: 
@@ -18,3 +18,8 @@ Basic knowledge of numerical methods, linear algebra, and machine learning is re
 
 ### [Course Syllabus](CME292_syllabus.pdf)
 
+### Acknolwedgement
+
+The course materials are adapted from a previous version of the course offered by Matthew J. Zahr (ICME alum), and the online resources provided by Mathworks, including the online courses (https://matlabacademy.mathworks.com/) and examples (https://www.mathworks.com/help/examples.html). 
+
+The materials are reformatted by Xiran Liu (ICME PhD). Special thanks to Dr. Hung Le from ICME and Dr. Reza Fazel-Rezai from Mathworks for guiding the reformation of course materials. 
