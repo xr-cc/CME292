@@ -1,6 +1,6 @@
 # CME292 Advanced MATLAB for Scientific Computing
 ### Winter Quarter 2022, offered by Stanford ICME in collaboration with Mathworks
-Schedule: Winter 2022, Jan 3rd-Jan 26th, Mon/Wed 5:30-7:00pm 
+Schedule: Winter 2022, Jan 3rd-Jan 31th, Mon/Wed 5:30-7:00pm 
 
 Location: 
 * Remote for the first two weeks (Zoom link will be available through Canvas);
