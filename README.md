@@ -15,7 +15,7 @@ CME 192 (Introduction to MATLAB) or equivalent programming background in other l
 Basic knowledge of numerical methods, linear algebra, and machine learning is recommended, but not required.
 
 ### Course Syllabus
-Please the course [Canvas page](https://canvas.stanford.edu/courses/150589) for the syllabus.
+Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) for the syllabus.
 
 ### Acknolwedgement
 
