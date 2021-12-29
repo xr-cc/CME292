@@ -2,9 +2,7 @@
 ### Winter Quarter 2022, offered by Stanford ICME in collaboration with Mathworks
 Schedule: Winter 2022, Jan 3rd-Jan 31th, Mon/Wed 5:30-7:00pm 
 
-Location: 
-* Remote for the first two weeks (Zoom link will be available through Canvas);
-* In Lathrop Library, Rm 299 for the last two weeks.
+Location: Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) for detailed information.
 
 
 ### Course Description
@@ -16,7 +14,8 @@ The goal of this 8-lecture short course is to introduce advanced MATLAB features
 CME 192 (Introduction to MATLAB) or equivalent programming background in other languages is highly recommended prior to taking this course. 
 Basic knowledge of numerical methods, linear algebra, and machine learning is recommended, but not required.
 
-### [Course Syllabus](CME292_syllabus.pdf)
+### Course Syllabus
+Please the course [Canvas page](https://canvas.stanford.edu/courses/150589) for the syllabus.
 
 ### Acknolwedgement
 
