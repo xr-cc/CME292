@@ -17,6 +17,16 @@ Basic knowledge of numerical methods, linear algebra, and machine learning is re
 ### Course Syllabus
 Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) for the syllabus.
 
+### Topics
+| Topic | Lecture Notes |
+| --- | --- |
+| MATLAB Fundamentals | [lec1.mlx](CME292_lecture_notes/lec1/lec1.mlx) |
+| Graphics and Data Visualization | [lec2_part1.mlx](CME292_lecture_notes/lec2/lec2_part1.mlx) |
+| Efficient Code Writing | [lec2_part2.mlx](CME292_lecture_notes/lec2/lec2_part2.mlx) |
+| System and File Manipulation | [lec3_part1.mlx](CME292_lecture_notes/lec3/lec3_part1.mlx) |
+| Big Data Handling | [lec3_part2.mlx](CME292_lecture_notes/lec3/lec3_part2.mlx) |
+|  |  |
+
 ### Acknolwedgement
 
 The course materials are adapted from a previous version of the course offered by Matthew J. Zahr (ICME alum), and the online resources provided by Mathworks, including the online courses (https://matlabacademy.mathworks.com/) and examples (https://www.mathworks.com/help/examples.html). 
