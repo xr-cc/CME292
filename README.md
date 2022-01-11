@@ -20,7 +20,7 @@ Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) 
 ### Topics
 | Topic | Lecture Notes |
 | --- | --- |
-| MATLAB Fundamentals | [lec1.mlx](CME292_lecture_notes/lec1/lec1.mlx) |
+| MATLAB Fundamentals | [Lecture 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/7a330373374cd5a3a9228ef20a61cfcc6adb408a/CME292_lecture_notes/lec1/lec1.html) |
 | Graphics and Data Visualization | [lec2_part1.mlx](CME292_lecture_notes/lec2/lec2_part1.mlx) |
 | Efficient Code Writing | [lec2_part2.mlx](CME292_lecture_notes/lec2/lec2_part2.mlx) |
 | System and File Manipulation | [lec3_part1.mlx](CME292_lecture_notes/lec3/lec3_part1.mlx) |
