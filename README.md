@@ -21,10 +21,10 @@ Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) 
 | Topic | Lecture Notes |
 | --- | --- |
 | MATLAB Fundamentals | [Lecture 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/7a330373374cd5a3a9228ef20a61cfcc6adb408a/CME292_lecture_notes/lec1/lec1.html) |
-| Graphics and Data Visualization | [lec2_part1.mlx](CME292_lecture_notes/lec2/lec2_part1.mlx) |
-| Efficient Code Writing | [lec2_part2.mlx](CME292_lecture_notes/lec2/lec2_part2.mlx) |
-| System and File Manipulation | [lec3_part1.mlx](CME292_lecture_notes/lec3/lec3_part1.mlx) |
-| Big Data Handling | [lec3_part2.mlx](CME292_lecture_notes/lec3/lec3_part2.mlx) |
+| Graphics and Data Visualization | [Lecture 2 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec2/lec2_part1.html) |
+| Efficient Code Writing | [Lecture 2 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec2/lec2_part2.html) |
+| System and File Manipulation | [Lecture 3 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec3/lec3_part1.html) |
+| Big Data Handling | [Lecture 3 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec3/lec3_part2.html) |
 |  |  |
 
 ### Acknolwedgement
