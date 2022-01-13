@@ -25,6 +25,9 @@ Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) 
 | Efficient Code Writing | [Lecture 2 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec2/lec2_part2.html) |
 | System and File Manipulation | [Lecture 3 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec3/lec3_part1.html) |
 | Big Data Handling | [Lecture 3 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/ca281b4680b2731bf48d29baa402b930c4ca5c1a/CME292_lecture_notes/lec3/lec3_part2.html) |
+| Applied Math - Numerical Linear Algebra | [Lecture 4 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part1.html) |
+|  Applied Math - Numerical Optimization  | [Lecture 4 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part2.html) |
+|  Applied Math - Symbolic Toolbox, ODE, and PDE  | [Lecture 4 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part2.html) |
 |  |  |
 
 ### Acknolwedgement
