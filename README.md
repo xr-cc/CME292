@@ -28,6 +28,8 @@ Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) 
 | Applied Math - Numerical Linear Algebra | [Lecture 4 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part1.html) |
 |  Applied Math - Numerical Optimization  | [Lecture 4 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part2.html) |
 |  Applied Math - Symbolic Toolbox, ODE, and PDE  | [Lecture 4 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/5fbc9325a6eb6e277f593124bee3834ffea1ff00/CME292_lecture_notes/lec4/lec4_part2.html) |
+| Statistical and Machine Learning | [Lecture 5 Part 1](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/3e9f2b41e47c936ff23519acb24d42a182812c0a/CME292_lecture_notes/lec5/lec5_part1.html) |
+| Deep Learning | [Lecture 5 Part 2](https://htmlpreview.github.io/?https://github.com/xr-cc/CME292_WI22/blob/3e9f2b41e47c936ff23519acb24d42a182812c0a/CME292_lecture_notes/lec5/lec5_part2.html) |
 |  |  |
 
 ### Acknolwedgement
