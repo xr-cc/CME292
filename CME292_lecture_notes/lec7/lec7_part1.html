@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB R2019a"><title>Image Processing with MATLAB</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.7999992370605px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: normal; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 13.9999990463257px; font-weight: normal; text-align: left;  }
+.S2 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: bold; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 13.9999990463257px;  }
+.S4 { margin-left: 55.9999961853027px; line-height: 20.9999980926514px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.S5 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: bold; text-align: left;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S6 { border-left: 0.694444417953491px solid rgb(233, 233, 233); border-right: 0.694444417953491px solid rgb(233, 233, 233); border-top: 0.694444417953491px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234001159668px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13.9999990463257px;  }
+.S7 { border-left: 0.694444417953491px solid rgb(233, 233, 233); border-right: 0.694444417953491px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0.694444417953491px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234001159668px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13.9999990463257px;  }
+.S8 { border-left: 0.694444417953491px solid rgb(233, 233, 233); border-right: 0.694444417953491px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234001159668px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13.9999990463257px;  }
+.S9 { border-left: 0.694444417953491px solid rgb(233, 233, 233); border-right: 0.694444417953491px solid rgb(233, 233, 233); border-top: 0.694444417953491px solid rgb(233, 233, 233); border-bottom: 0.694444417953491px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234001159668px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; font-size: 13.9999990463257px;  }
+.S10 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: bold; text-align: left;  }
+.S11 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: bold; text-align: left;  }
+.S12 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 13.9999990463257px; font-weight: normal; text-align: left;  }
+.S13 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: bold; text-align: left;  }
+.S14 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: bold; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>Image Processing with MATLAB</span></h1><div  class = 'S1'><span>This lecture is partly adapted from MATLAB online tutorial and </span><a href = "https://www.mathworks.com/help/examples.html"><span>MATLAB examples</span></a><span>.</span></div><h2  class = 'S2'><span>Image Processing Toolbox</span></h2><div  class = 'S1'><a href = "https://www.mathworks.com/products/image.html"><span>https://www.mathworks.com/products/statistics.html</span></a></div><div  class = 'S1'><span>Image Processing Toolbox™ provides a comprehensive set of reference-standard algorithms and workflow apps for image processing, analysis, visualization, and algorithm development. </span></div><div  class = 'S1'><span>It provides tools and algorithms for:</span></div><ul  class = 'S3'><li  class = 'S4'><span>image segmentation</span></li><li  class = 'S4'><span>image enhancement</span></li><li  class = 'S4'><span>noise reduction</span></li><li  class = 'S4'><span>geometric transformations</span></li><li  class = 'S4'><span>image registration</span></li><li  class = 'S4'><span>3D image processing</span></li><li  class = 'S4'><span>... ...</span></li></ul><div  class = 'S1'><span style=' font-weight: bold;'>Install Toolbox:</span></div><div  class = 'S1'><span>Add-Ons --&gt; Get Add-Ons --&gt; search for the toolbox --&gt; install</span></div><div  class = 'S1'><span>* Image data used in this lecture comes from </span><a href = "http://vision.stanford.edu/aditya86/ImageNetDogs/"><span>Stanford Dogs Dataset</span></a><span>.</span></div><h3  class = 'S5'><span>Import and Display Images</span></h3><div  class = 'S1'><span>Load and display an image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I1 = imread(</span><span style="color: rgb(160, 32, 240);">"data/01.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(I1)</span></span></div></div></div><div  class = 'S1'><span>Load another image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I2 = imread(</span><span style="color: rgb(160, 32, 240);">"data/02.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshow(I2)</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>size(I1),size(I2)</span></span></div></div></div><div  class = 'S1'><span>Resize and display two images together.</span></div><div  class = 'S1'><span style=' font-family: monospace;'>imresize</span><span>'s default interpolation method is </span><span style=' font-family: monospace;'>bicubic</span><span>. Bicubic interpolation can produce pixel values outside the original range.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I1 = imresize(I1, [400,500],</span><span style="color: rgb(160, 32, 240);">"Method"</span><span>,</span><span style="color: rgb(160, 32, 240);">"bilinear"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>I2 = imresize(I2, [400,500],</span><span style="color: rgb(160, 32, 240);">"Method"</span><span>,</span><span style="color: rgb(160, 32, 240);">"bilinear"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I1,I2,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div  class = 'S1'><span>Trim the white border for the second image.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>close_to_white = I2(:,:,1)&gt;240 &amp; I2(:,:,2)&gt;240 &amp; I2(:,:,3)&gt;240;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>is_wht_c = sum(close_to_white,1)&gt;size(close_to_white,1)*.5;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>is_wht_r = sum(close_to_white,2)&gt;size(close_to_white,2)*.5;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>row1 = find(diff(is_wht_r)==-1)+1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>row2 = find(diff(is_wht_r)==1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>col1 = find(diff(is_wht_c)==-1)+1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>col2 = find(diff(is_wht_c)==1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>croppedI2 = I2(row1:row2, col1:col2, :);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshow(croppedI2)</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>size(croppedI2) </span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I2 = imresize(croppedI2, [400,500],</span><span style="color: rgb(160, 32, 240);">"Method"</span><span>,</span><span style="color: rgb(160, 32, 240);">"bilinear"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I1,I2,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div  class = 'S1'><span>Display an image with alternating rectangular regions from each</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imshowpair(I1,I2,</span><span style="color: rgb(160, 32, 240);">"checkerboard"</span><span>)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span><span>; clear; clc</span></span></div></div></div><h3  class = 'S10'><span>Grayscale and Color Images</span></h3><div  class = 'S1'><span>Extract Color Planes and Intensity Values</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I = imread(</span><span style="color: rgb(160, 32, 240);">"data/03.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>[R,G,B] = imsplit(I);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% or</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% R = I(:,:,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% G = I(:,:,2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% B = I(:,:,3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>montage({I,R,G,B},</span><span style="color: rgb(160, 32, 240);">'Size'</span><span>,[2 2])</span></span></div></div></div><div  class = 'S1'><span>Convert to grascale image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>gs = rgb2gray(I);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(gs)</span></span></div></div></div><div  class = 'S1'><span>Save image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imwrite(gs,</span><span style="color: rgb(160, 32, 240);">"img_gs.jpg"</span><span>)</span></span></div></div></div><h4  class = 'S11'><span>Rotate and compare images </span></h4><div  class = 'S1'><span style=' font-family: monospace;'>J </span><span style=' font-family: monospace;'>= imrotate(I,angle,method,bbox)</span><span> </span><span>rotates image</span><span> </span><span style=' font-family: monospace;'>I</span><span> </span><span>using the interpolation method specified by</span><span> </span><span style=' font-family: monospace;'>method</span><span>. The </span><span style=' font-family: monospace;'>bbox</span><span> argument to define the size of the output image.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I_rot = imrotate(I,5,</span><span style="color: rgb(160, 32, 240);">'bicubic'</span><span>,</span><span style="color: rgb(160, 32, 240);">'crop'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I,I_rot,</span><span style="color: rgb(160, 32, 240);">'montage'</span><span>)</span></span></div></div></div><div  class = 'S1'><span>Display the difference</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imshowpair(I,I_rot,</span><span style="color: rgb(160, 32, 240);">'diff'</span><span>)</span></span></div></div></div><div  class = 'S1'><span>Display a blended overlay</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imshowpair(I,I_rot,</span><span style="color: rgb(160, 32, 240);">'blend'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Scaling'</span><span>,</span><span style="color: rgb(160, 32, 240);">'joint'</span><span>)</span></span></div></div></div><h3  class = 'S5'><span>Contrast and Intensity Histograms</span></h3><div  class = 'S1'><span>When analyzing a set of images, normalizing the brightness can be an important preprocessing step. An </span><span style=' font-weight: bold;'>intensity histogram</span><span> separates pixels into bins based on their intensity values. Dark images, for example, have many pixels binned in the low end of the histogram. Bright regions have pixels binned at the high end of the histogram.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>gs = rgb2gray(I);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imhist(gs)</span></span></div></div></div><div  class = 'S1'><span>Multiple techniques for </span><span style=' font-weight: bold;'>grayscale image contrast enhancement</span><span>:</span></div><ul  class = 'S3'><li  class = 'S4'><span style=' font-family: monospace;'>imadjust</span><span> </span><span>increases the contrast of the image by mapping the values of the input intensity image to new values such that, by default, 1% of the data is saturated at low and high intensities of the input data.</span></li><li  class = 'S4'><span style=' font-family: monospace;'>histeq</span><span> </span><span>performs histogram equalization. It enhances the contrast of images by transforming the values in an intensity image so that the histogram of the output image approximately matches a specified histogram (uniform distribution by default).</span></li><li  class = 'S4'><span style=' font-family: monospace;'>adapthisteq</span><span> </span><span>performs contrast-limited adaptive histogram equalization (CLANE). Unlike</span><span> </span><span style=' font-family: monospace;'>histeq</span><span>, it operates on small data regions (tiles) rather than the entire image. Each tile's contrast is enhanced so that the histogram of each output region approximately matches the specified histogram (uniform distribution by default). The contrast enhancement can be limited in order to avoid amplifying the noise which might be present in the image.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>gsAdj1 = imadjust(gs);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gsAdj2 = histeq(gs);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gsAdj3 = adapthisteq(gs);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>montage({gs,gsAdj1,gsAdj2,gsAdj3})</span></span></div></div></div><div  class = 'S1'><span>Display intensity historgram for the adjusted image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imhist(gsAdj2)</span></span></div></div></div><h3  class = 'S5'><span style=' font-weight: bold;'>Thresholding Intensity Values</span></h3><div  class = 'S1'><span>Threshold the intensity values of a grayscale image with automated threshold selection process by using the </span><span style=' font-family: monospace;'>imbinarize</span><span> function, which calculates the "best" threshold for the image.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>BW = imbinarize(gsAdj1,</span><span style="color: rgb(160, 32, 240);">"adaptive"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>BW_default = imbinarize(gsAdj1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(BW_default,BW,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div  class = 'S1'><span>Choose the foreground to be dark </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>BW = imbinarize(gsAdj1,</span><span style="color: rgb(160, 32, 240);">"adaptive"</span><span>,</span><span style="color: rgb(160, 32, 240);">"ForegroundPolarity"</span><span>,</span><span style="color: rgb(160, 32, 240);">"dark"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(gsAdj1,BW,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span></span></div></div></div><h3  class = 'S10'><span>Working with binary images</span></h3><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I = imread(</span><span style="color: rgb(160, 32, 240);">"data/04.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gs = rgb2gray(I);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>BW = imbinarize(gs,</span><span style="color: rgb(160, 32, 240);">"adaptive"</span><span>,</span><span style="color: rgb(160, 32, 240);">"ForegroundPolarity"</span><span>,</span><span style="color: rgb(160, 32, 240);">"dark"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshowpair(gs,BW,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure(</span><span style="color: rgb(160, 32, 240);">"Position"</span><span>,[1,1,500,200])</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>subplot(1,2,1)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>plot(sum(BW,2)) </span><span style="color: rgb(34, 139, 34);">% sum across each row</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>subplot(1,2,2)</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>plot(sum(BW,1)) </span><span style="color: rgb(34, 139, 34);">% sum across each column</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span></span></div></div></div><h3  class = 'S10'><span style=' font-weight: bold;'>Filtering Noise</span></h3><div  class = 'S1'><span>Images taken in low light often become noisy due to the increase in camera sensitivity required to capture the image. To reduce the impact of this noise on the binary image, preprocess the image with an averaging filter.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>H = fspecial(</span><span style="color: rgb(160, 32, 240);">"average"</span><span>,3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gssmooth = imfilter(gs,H,</span><span style="color: rgb(160, 32, 240);">"replicate"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>BWsmooth = imbinarize(gssmooth,</span><span style="color: rgb(160, 32, 240);">"adaptive"</span><span>,</span><span style="color: rgb(160, 32, 240);">"ForegroundPolarity"</span><span>,</span><span style="color: rgb(160, 32, 240);">"dark"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(BW,BWsmooth,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div  class = 'S12'><span>Try a motion-blur filter for fun.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>H_motion = fspecial(</span><span style="color: rgb(160, 32, 240);">'motion'</span><span>, 20, 0);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>I_motion = imfilter(I,H_motion,</span><span style="color: rgb(160, 32, 240);">"replicate"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I,I_motion,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span></span></div></div></div><h3  class = 'S5'><span style=' font-weight: bold;'>Background Subtraction</span></h3><div  class = 'S1'><span style=' font-weight: bold;'>Remove the Background. </span></div><div  class = 'S1'><span>A </span><span style=' font-family: monospace;'>strel</span><span> object represents a flat morphological </span><span style=' font-style: italic;'>structuring element</span><span>, which is an essential part of morphological dilation and erosion operations. The following figure illustrates a flat structuring element.</span></div><div  class = 'S1'><img class = "imageNode" src = "data:image/png;base64,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" width = "244" height = "126" alt = "" style = "vertical-align: baseline"></img></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I = imread(</span><span style="color: rgb(160, 32, 240);">"data/02.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gs = rgb2gray(I);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>SE = strel(</span><span style="color: rgb(160, 32, 240);">"disk"</span><span>,40)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>Ibg = imclose(gs,SE);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(Ibg)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>gsSub = Ibg-gs;</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(gsSub)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>BWsub = ~imbinarize(gsSub);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I,BWsub,</span><span style="color: rgb(160, 32, 240);">"montage"</span><span>)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span><span>; clear; clc</span></span></div></div></div><h3  class = 'S10'><span>Image Saturation</span></h3><div  class = 'S1'><span style=' font-weight: bold;'>Adjust the saturation of a color image by converting the image to the HSV color space.</span></div><div  class = 'S1'><span>Convert the image to the HSV color space.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I = imread(</span><span style="color: rgb(160, 32, 240);">"data/01.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>HSV = rgb2hsv(I);</span></span></div></div></div><div  class = 'S12'><span>Process the HSV image and increases the saturation of the image by multiplying the S channel by a scale factor.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>[h,s,v] = imsplit(HSV);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>saturationFactor = 1.8;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>s_sat = s*saturationFactor;</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>HSV_sat = cat(3,h,s_sat,v);</span></span></div></div></div><div  class = 'S12'><span>Convert the processed HSV image back to the RGB color space. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I_sat = hsv2rgb(HSV_sat);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(I,I_sat,</span><span style="color: rgb(160, 32, 240);">"Montage"</span><span>)</span></span></div></div></div><h3  class = 'S5'><span>Reduce Noise in Image Gradients</span></h3><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>I = imread(</span><span style="color: rgb(160, 32, 240);">"data/02.jpg"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>gs = rgb2gray(I);</span></span></div></div></div><div  class = 'S12'><span>Simulate noise: add some Gaussian noise</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>gs_noisy = imnoise(gs,</span><span style="color: rgb(160, 32, 240);">'gaussian'</span><span>,0,0.05);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshowpair(gs,gs_noisy,</span><span style="color: rgb(160, 32, 240);">"Montage"</span><span>)</span></span></div></div></div><div  class = 'S12'><span>Compute the magnitude of the gradient.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>sobelGradient = imgradient(gs_noisy);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshow(sobelGradient,[])</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Sobel Gradient Magnitude'</span><span>)</span></span></div></div></div><div  class = 'S1'><span>The effect of noise can be minimized by smoothing before gradient computation. </span></div><div  class = 'S1'><span>Smooth the image using a </span><span style=' font-weight: bold;'>Gaussian smoothing filter</span><span> before computing image gradients. Use the </span><span style=' font-family: monospace;'>imgaussfilt</span><span> function to smooth the image. The standard deviation of the Gaussian filter varies the extent of smoothing. Since smoothing is taken care of by Gaussian filtering, the central or intermediate differencing gradient operators can be used.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>sigma = 2; </span><span style="color: rgb(34, 139, 34);">% 5</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gs_smooth = imgaussfilt(gs_noisy,sigma);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>smoothGradient = imgradient(gs_smooth);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshow(smoothGradient,[])</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Smoothed Gradient Magnitude'</span><span>)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span><span>; clear; clc</span></span></div></div></div><h2  class = 'S13'><span>Computer Vision Toolbox</span></h2><div  class = 'S1'><a href = "https://www.mathworks.com/products/computer-vision.html"><span>https://www.mathworks.com/products/computer-vision.html</span></a></div><div  class = 'S1'><span>Computer Vision Toolbox™ provides algorithms, functions, and apps for designing and testing computer vision, 3D vision, and video processing systems.</span></div><div  class = 'S1'><span>It provides tools and algorithms for:</span></div><ul  class = 'S3'><li  class = 'S4'><span>object detection and tracking</span></li><li  class = 'S4'><span>feature detection, extraction, and matching</span></li><li  class = 'S4'><span>automating calibration workflows for single, stereo, and fisheye cameras</span></li><li  class = 'S4'><span>visual and point cloud SLAM, stereo vision, structure from motion, and point cloud processing</span></li><li  class = 'S4'><span>... ...</span></li></ul><div  class = 'S1'><span>More exmaples using Computer Vision Toolbox can be found here: </span><a href = "https://www.mathworks.com/help/vision/examples.html?category=index&amp;exampleproduct=all&amp;s_tid=CRUX_lftnav"><span>Computer Vision Toolbox — Examples</span></a><span>.</span></div><h3  class = 'S5'><span>Demo: Semantic Segmentation Using Dilated Convolutions </span></h3><div  class = 'S1'><span>This demo is taken from MATLAB examples. The dataset contains 32-by-32 triangle images. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% load image data</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>dataFolder = fullfile(toolboxdir(</span><span style="color: rgb(160, 32, 240);">'vision'</span><span>),</span><span style="color: rgb(160, 32, 240);">'visiondata'</span><span>,</span><span style="color: rgb(160, 32, 240);">'triangleImages'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imageFolderTrain = fullfile(dataFolder,</span><span style="color: rgb(160, 32, 240);">'trainingImages'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>labelFolderTrain = fullfile(dataFolder,</span><span style="color: rgb(160, 32, 240);">'trainingLabels'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% create DataStore</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imdsTrain = imageDatastore(imageFolderTrain);</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% view an image</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>img = readimage(imdsTrain,2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(img)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>classNames = [</span><span style="color: rgb(160, 32, 240);">"triangle" "background"</span><span>];</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>labels = [255 0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>pxdsTrain = pixelLabelDatastore(labelFolderTrain,classNames,labels)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% create data source</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>pximdsTrain = pixelLabelImageDatastore(imdsTrain,pxdsTrain);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>tbl = countEachLabel(pximdsTrain)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% use inverse frequency weighting for pixel labels</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>numberPixels = sum(tbl.PixelCount);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>frequency = tbl.PixelCount / numberPixels;</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>classWeights = 1 ./ frequency;</span></span></div></div></div><div  class = 'S1'><span style=' font-weight: bold;'>Create a simple semantic segmentation network based on dilated convolutions.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>inputSize = [32 32 1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>filterSize = 3;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>numFilters = 32;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>numClasses = numel(classNames);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>layers = [</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    imageInputLayer(inputSize)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    convolution2dLayer(filterSize,numFilters,</span><span style="color: rgb(160, 32, 240);">'DilationFactor'</span><span>,1,</span><span style="color: rgb(160, 32, 240);">'Padding'</span><span>,</span><span style="color: rgb(160, 32, 240);">'same'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    batchNormalizationLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    reluLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    convolution2dLayer(filterSize,numFilters,</span><span style="color: rgb(160, 32, 240);">'DilationFactor'</span><span>,2,</span><span style="color: rgb(160, 32, 240);">'Padding'</span><span>,</span><span style="color: rgb(160, 32, 240);">'same'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    batchNormalizationLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    reluLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    convolution2dLayer(filterSize,numFilters,</span><span style="color: rgb(160, 32, 240);">'DilationFactor'</span><span>,4,</span><span style="color: rgb(160, 32, 240);">'Padding'</span><span>,</span><span style="color: rgb(160, 32, 240);">'same'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    batchNormalizationLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    reluLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    convolution2dLayer(1,numClasses)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    softmaxLayer</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>    pixelClassificationLayer(</span><span style="color: rgb(160, 32, 240);">'Classes'</span><span>,classNames,</span><span style="color: rgb(160, 32, 240);">'ClassWeights'</span><span>,classWeights)];</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>layers</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>analyzeNetwork(layers)</span></span></div></div></div><div  class = 'S1'><span style=' font-weight: bold;'>Train network</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>options = trainingOptions(</span><span style="color: rgb(160, 32, 240);">'sgdm'</span><span>, </span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span><span style="color: rgb(160, 32, 240);">'MaxEpochs'</span><span>, 100, </span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span><span style="color: rgb(160, 32, 240);">'MiniBatchSize'</span><span>, 64, </span><span style="color: rgb(0, 0, 255);">...</span><span style="color: rgb(34, 139, 34);"> </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span><span style="color: rgb(160, 32, 240);">'InitialLearnRate'</span><span>, 1e-3,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span><span style="color: rgb(160, 32, 240);">'Plots'</span><span>,</span><span style="color: rgb(160, 32, 240);">'training-progress'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>net = trainNetwork(pximdsTrain,layers,options);</span></span></div></div></div><div  class = 'S1'><span style=' font-weight: bold;'>Test network</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>imageFolderTest = fullfile(dataFolder,</span><span style="color: rgb(160, 32, 240);">'testImages'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imdsTest = imageDatastore(imageFolderTest);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>labelFolderTest = fullfile(dataFolder,</span><span style="color: rgb(160, 32, 240);">'testLabels'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>pxdsTest = pixelLabelDatastore(labelFolderTest,classNames,labels);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% make predictions</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% [pxdsPred,score] = semanticseg(imdsTest,net);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>pxdsPred = semanticseg(imdsTest,net,</span><span style="color: rgb(160, 32, 240);">'MiniBatchSize'</span><span>,32,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    </span><span style="color: rgb(160, 32, 240);">'WriteLocation'</span><span>,tempdir);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% evaluate accuracy</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>metrics = evaluateSemanticSegmentation(pxdsPred,pxdsTest)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>metrics.ConfusionMatrix</span></span></div></div></div><div  class = 'S1'><span style=' font-weight: bold;'>Segment new image</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% test image</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imgTest = imread(</span><span style="color: rgb(160, 32, 240);">'triangleTest.jpg'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>imshow(imgTest)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% segment</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>C = semanticseg(imgTest,net);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>B = labeloverlay(imgTest,C);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>imshow(B)</span></span></div></div></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span><span>; clear; clc</span></span></div></div></div><h2  class = 'S13'><span>Image Acquisition Toolbox</span></h2><div  class = 'S1'><a href = "https://www.mathworks.com/products/image-acquisition.html"><span>https://www.mathworks.com/products/image-acquisition.html</span></a><span> </span></div><div  class = 'S1'><span>Image Acquisition Toolbox™ provides functions and blocks for connecting cameras to MATLAB and Simulink. It includes a MATLAB app that lets you interactively detect and configure hardware properties. </span></div><div  class = 'S1'><span>It provides tools and algorithms for:</span></div><ul  class = 'S3'><li  class = 'S4'><span>processing in-the-loop</span></li><li  class = 'S4'><span>hardware triggering</span></li><li  class = 'S4'><span>background acquisition</span></li><li  class = 'S4'><span>synchronizing acquisition across multiple devices</span></li><li  class = 'S4'><span>...</span></li></ul><div  class = 'S1'><span>You can generate equivalent MATLAB code to automate the acquisition. </span></div><div  class = 'S1'><span>Can be used with: </span></div><h4  class = 'S14'><span>Built-in camera</span></h4><ul  class = 'S3'><li  class = 'S4'><span style=' font-weight: bold;'>Image Acquisition Toolbox Support Package for OS Generic Video Interface</span></li><li  class = 'S4'><span>use adaptor '</span><span style=' font-family: monospace;'>macvideo</span><span>', '</span><span style=' font-family: monospace;'>winvideo</span><span>', etc.</span></li></ul><h4  class = 'S14'><span>USB Video Class (UVC) compliant webcam</span></h4><ul  class = 'S3'><li  class = 'S4'><span style=' font-weight: bold;'>MATLAB Support Package for USB Webcams</span><span> </span></li><li  class = 'S4'><span style=' font-family: monospace;'>webcamlist, webcam</span></li></ul><h4  class = 'S14'><span>Other hardwares</span></h4><ul  class = 'S3'><li  class = 'S4'><span>DCAM, GenTL, Matrox frame grabbers, Point Grey, GigE vision, Kinect for Windows Sensor,  National Instruments frame grabbers, Teledyne DALSA Sapera cameras, Hamamatsu, QImaging, IP Cameras</span></li></ul><h4  class = 'S11'><span>Demo (built-in camera)</span></h4><div  class = 'S1'><span>Determine the adaptor and device ID, and create a video input object.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>vid = videoinput(</span><span style="color: rgb(160, 32, 240);">'macvideo'</span><span>, 1);</span></span></div></div></div><div  class = 'S1'><span>Preview the video stream.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>preview(vid)</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span style="color: rgb(34, 139, 34);">% closepreview(vid)</span></span></div></div></div><div  class = 'S1'><span>Configure object properties. Specify the color space to return image data.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>set(vid, </span><span style="color: rgb(160, 32, 240);">'ReturnedColorSpace'</span><span>, </span><span style="color: rgb(160, 32, 240);">'RGB'</span><span>); </span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>get(vid)</span></span></div></div></div><div  class = 'S1'><span>Get a snapshot image.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>img = getsnapshot(vid);</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>image(img);</span></span></div></div></div><div  class = 'S1'><span>Automate in a for-loop and take snap shot every other second</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>set(vid, </span><span style="color: rgb(160, 32, 240);">'ReturnedColorSpace'</span><span>, </span><span style="color: rgb(160, 32, 240);">'grayscale'</span><span>); </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>n = 4;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>colormap(</span><span style="color: rgb(160, 32, 240);">'gray'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">for </span><span>i = 1:n</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    subplot(n/2,2,i);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    img = getsnapshot(vid);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    image(img); </span><span style="color: rgb(34, 139, 34);">% or imshow</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    pause(1)</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div></div><h4  class = 'S11'><span>Demo: capture movements</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>vid = videoinput(</span><span style="color: rgb(160, 32, 240);">'macvideo'</span><span>, 1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>vid.TriggerRepeat = 100;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>vid.FrameGrabInterval = 2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>start(vid) </span><span style="color: rgb(34, 139, 34);">% start acquiring frames</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>i = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">while</span><span>(i&lt;50) </span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    data = getdata(vid,2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    diff_im = imabsdiff(data(:,:,:,1),data(:,:,:,2));</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    imshow(diff_im);</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    drawnow </span><span style="color: rgb(34, 139, 34);">% update figure window</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>    i = i+1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>stop(vid)</span></span></div></div></div><div  class = 'S1'><span>Clean up.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>delete(vid)</span></span></div></div><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear</span></span></div></div><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre;"><span>close </span><span style="color: rgb(160, 32, 240);">all</span><span>;</span></span></div></div></div><h4  class = 'S11'><span>References</span></h4><ol  class = 'S3'><li  class = 'S4'><span>Chen, Liang-Chieh, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan L. Yuille. "Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs." IEEE transactions on pattern analysis and machine intelligence 40, no. 4 (2018): 834-848.</span></li></ol><div  class = 'S1'><span style=' font-style: italic;'>Copyright 2018 The MathWorks, Inc.</span></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Image Processing with MATLAB
+% This lecture is partly adapted from MATLAB online tutorial and <https://www.mathworks.com/help/examples.html 
+% MATLAB examples>.
+%% Image Processing Toolbox
+% <https://www.mathworks.com/products/image.html https://www.mathworks.com/products/statistics.html>
+% 
+% Image Processing Toolbox™ provides a comprehensive set of reference-standard 
+% algorithms and workflow apps for image processing, analysis, visualization, 
+% and algorithm development. 
+% 
+% It provides tools and algorithms for:
+%% 
+% * image segmentation
+% * image enhancement
+% * noise reduction
+% * geometric transformations
+% * image registration
+% * 3D image processing
+% * ... ...
+%% 
+% *Install Toolbox:*
+% 
+% Add-Ons REPLACE_WITH_DASH_DASH> Get Add-Ons REPLACE_WITH_DASH_DASH> search for the toolbox REPLACE_WITH_DASH_DASH> install
+% 
+% * Image data used in this lecture comes from <http://vision.stanford.edu/aditya86/ImageNetDogs/ 
+% Stanford Dogs Dataset>.
+% Import and Display Images
+% Load and display an image
+
+I1 = imread("data/01.jpg");
+imshow(I1)
+%% 
+% Load another image
+
+I2 = imread("data/02.jpg");
+imshow(I2)
+size(I1),size(I2)
+%% 
+% Resize and display two images together.
+% 
+% |imresize|'s default interpolation method is |bicubic|. Bicubic interpolation 
+% can produce pixel values outside the original range.
+
+I1 = imresize(I1, [400,500],"Method","bilinear");
+I2 = imresize(I2, [400,500],"Method","bilinear");
+imshowpair(I1,I2,"montage")
+%% 
+% Trim the white border for the second image.
+
+close_to_white = I2(:,:,1)>240 & I2(:,:,2)>240 & I2(:,:,3)>240;
+is_wht_c = sum(close_to_white,1)>size(close_to_white,1)*.5;
+is_wht_r = sum(close_to_white,2)>size(close_to_white,2)*.5;
+
+row1 = find(diff(is_wht_r)==-1)+1;
+row2 = find(diff(is_wht_r)==1);
+col1 = find(diff(is_wht_c)==-1)+1;
+col2 = find(diff(is_wht_c)==1);
+croppedI2 = I2(row1:row2, col1:col2, :);
+imshow(croppedI2)
+size(croppedI2) 
+%%
+I2 = imresize(croppedI2, [400,500],"Method","bilinear");
+imshowpair(I1,I2,"montage")
+%% 
+% Display an image with alternating rectangular regions from each
+
+imshowpair(I1,I2,"checkerboard")
+%%
+close all; clear; clc
+% Grayscale and Color Images
+% Extract Color Planes and Intensity Values
+
+I = imread("data/03.jpg");
+[R,G,B] = imsplit(I);
+% or
+% R = I(:,:,1);
+% G = I(:,:,2);
+% B = I(:,:,3);
+montage({I,R,G,B},'Size',[2 2])
+%% 
+% Convert to grascale image
+
+gs = rgb2gray(I);
+imshow(gs)
+%% 
+% Save image
+
+imwrite(gs,"img_gs.jpg")
+% Rotate and compare images 
+% |J = imrotate(I,angle,method,bbox)| rotates image |I| using the interpolation 
+% method specified by |method|. The |bbox| argument to define the size of the 
+% output image.
+
+I_rot = imrotate(I,5,'bicubic','crop');
+imshowpair(I,I_rot,'montage')
+%% 
+% Display the difference
+
+imshowpair(I,I_rot,'diff')
+%% 
+% Display a blended overlay
+
+imshowpair(I,I_rot,'blend','Scaling','joint')
+% Contrast and Intensity Histograms
+% When analyzing a set of images, normalizing the brightness can be an important 
+% preprocessing step. An *intensity histogram* separates pixels into bins based 
+% on their intensity values. Dark images, for example, have many pixels binned 
+% in the low end of the histogram. Bright regions have pixels binned at the high 
+% end of the histogram.
+
+gs = rgb2gray(I);
+imhist(gs)
+%% 
+% Multiple techniques for *grayscale image contrast enhancement*:
+%% 
+% * |imadjust| increases the contrast of the image by mapping the values of 
+% the input intensity image to new values such that, by default, 1% of the data 
+% is saturated at low and high intensities of the input data.
+% * |histeq| performs histogram equalization. It enhances the contrast of images 
+% by transforming the values in an intensity image so that the histogram of the 
+% output image approximately matches a specified histogram (uniform distribution 
+% by default).
+% * |adapthisteq| performs contrast-limited adaptive histogram equalization 
+% (CLANE). Unlike |histeq|, it operates on small data regions (tiles) rather than 
+% the entire image. Each tile's contrast is enhanced so that the histogram of 
+% each output region approximately matches the specified histogram (uniform distribution 
+% by default). The contrast enhancement can be limited in order to avoid amplifying 
+% the noise which might be present in the image.
+
+gsAdj1 = imadjust(gs);
+gsAdj2 = histeq(gs);
+gsAdj3 = adapthisteq(gs);
+montage({gs,gsAdj1,gsAdj2,gsAdj3})
+%% 
+% Display intensity historgram for the adjusted image
+
+imhist(gsAdj2)
+% *Thresholding Intensity Values*
+% Threshold the intensity values of a grayscale image with automated threshold 
+% selection process by using the |imbinarize| function, which calculates the "best" 
+% threshold for the image.
+
+BW = imbinarize(gsAdj1,"adaptive");
+BW_default = imbinarize(gsAdj1);
+imshowpair(BW_default,BW,"montage")
+%% 
+% Choose the foreground to be dark 
+
+BW = imbinarize(gsAdj1,"adaptive","ForegroundPolarity","dark");
+imshowpair(gsAdj1,BW,"montage")
+%%
+close all
+% Working with binary images
+
+I = imread("data/04.jpg");
+gs = rgb2gray(I);
+BW = imbinarize(gs,"adaptive","ForegroundPolarity","dark");
+imshowpair(gs,BW,"montage")
+figure("Position",[1,1,500,200])
+subplot(1,2,1)
+plot(sum(BW,2)) % sum across each row
+subplot(1,2,2)
+plot(sum(BW,1)) % sum across each column
+%%
+close all
+% *Filtering Noise*
+% Images taken in low light often become noisy due to the increase in camera 
+% sensitivity required to capture the image. To reduce the impact of this noise 
+% on the binary image, preprocess the image with an averaging filter.
+
+H = fspecial("average",3);
+gssmooth = imfilter(gs,H,"replicate");
+BWsmooth = imbinarize(gssmooth,"adaptive","ForegroundPolarity","dark");
+imshowpair(BW,BWsmooth,"montage")
+%% 
+% Try a motion-blur filter for fun.
+
+H_motion = fspecial('motion', 20, 0);
+I_motion = imfilter(I,H_motion,"replicate");
+imshowpair(I,I_motion,"montage")
+%%
+close all
+% *Background Subtraction*
+% *Remove the Background. *
+% 
+% A |strel| object represents a flat morphological _structuring element_, which 
+% is an essential part of morphological dilation and erosion operations. The following 
+% figure illustrates a flat structuring element.
+% 
+% 
+I = imread("data/02.jpg");
+gs = rgb2gray(I);
+SE = strel("disk",40)
+%%
+Ibg = imclose(gs,SE);
+imshow(Ibg)
+%%
+gsSub = Ibg-gs;
+imshow(gsSub)
+%%
+BWsub = ~imbinarize(gsSub);
+imshowpair(I,BWsub,"montage")
+%%
+close all; clear; clc
+% Image Saturation
+% *Adjust the saturation of a color image by converting the image to the HSV 
+% color space.*
+% 
+% Convert the image to the HSV color space.
+
+I = imread("data/01.jpg");
+HSV = rgb2hsv(I);
+%% 
+% Process the HSV image and increases the saturation of the image by multiplying 
+% the S channel by a scale factor.
+
+[h,s,v] = imsplit(HSV);
+saturationFactor = 1.8;
+s_sat = s*saturationFactor;
+HSV_sat = cat(3,h,s_sat,v);
+%% 
+% Convert the processed HSV image back to the RGB color space. 
+
+I_sat = hsv2rgb(HSV_sat);
+imshowpair(I,I_sat,"Montage")
+% Reduce Noise in Image Gradients
+
+I = imread("data/02.jpg");
+gs = rgb2gray(I);
+%% 
+% Simulate noise: add some Gaussian noise
+
+gs_noisy = imnoise(gs,'gaussian',0,0.05);
+imshowpair(gs,gs_noisy,"Montage")
+%% 
+% Compute the magnitude of the gradient.
+
+sobelGradient = imgradient(gs_noisy);
+imshow(sobelGradient,[])
+title('Sobel Gradient Magnitude')
+%% 
+% The effect of noise can be minimized by smoothing before gradient computation. 
+% 
+% Smooth the image using a *Gaussian smoothing filter* before computing image 
+% gradients. Use the |imgaussfilt| function to smooth the image. The standard 
+% deviation of the Gaussian filter varies the extent of smoothing. Since smoothing 
+% is taken care of by Gaussian filtering, the central or intermediate differencing 
+% gradient operators can be used.
+
+sigma = 2; % 5
+gs_smooth = imgaussfilt(gs_noisy,sigma);
+smoothGradient = imgradient(gs_smooth);
+imshow(smoothGradient,[])
+title('Smoothed Gradient Magnitude')
+%%
+close all; clear; clc
+%% Computer Vision Toolbox
+% <https://www.mathworks.com/products/computer-vision.html https://www.mathworks.com/products/computer-vision.html>
+% 
+% Computer Vision Toolbox™ provides algorithms, functions, and apps for designing 
+% and testing computer vision, 3D vision, and video processing systems.
+% 
+% It provides tools and algorithms for:
+%% 
+% * object detection and tracking
+% * feature detection, extraction, and matching
+% * automating calibration workflows for single, stereo, and fisheye cameras
+% * visual and point cloud SLAM, stereo vision, structure from motion, and point 
+% cloud processing
+% * ... ...
+%% 
+% More exmaples using Computer Vision Toolbox can be found here: <https://www.mathworks.com/help/vision/examples.html?category=index&exampleproduct=all&s_tid=CRUX_lftnav 
+% Computer Vision Toolbox — Examples>.
+% Demo: Semantic Segmentation Using Dilated Convolutions 
+% This demo is taken from MATLAB examples. The dataset contains 32-by-32 triangle 
+% images. 
+
+% load image data
+dataFolder = fullfile(toolboxdir('vision'),'visiondata','triangleImages');
+imageFolderTrain = fullfile(dataFolder,'trainingImages');
+labelFolderTrain = fullfile(dataFolder,'trainingLabels');
+
+% create DataStore
+imdsTrain = imageDatastore(imageFolderTrain);
+%%
+% view an image
+img = readimage(imdsTrain,2);
+imshow(img)
+%%
+classNames = ["triangle" "background"];
+labels = [255 0];
+pxdsTrain = pixelLabelDatastore(labelFolderTrain,classNames,labels)
+% create data source
+pximdsTrain = pixelLabelImageDatastore(imdsTrain,pxdsTrain);
+tbl = countEachLabel(pximdsTrain)
+% use inverse frequency weighting for pixel labels
+numberPixels = sum(tbl.PixelCount);
+frequency = tbl.PixelCount / numberPixels;
+classWeights = 1 ./ frequency;
+%% 
+% *Create a simple semantic segmentation network based on dilated convolutions.*
+
+inputSize = [32 32 1];
+filterSize = 3;
+numFilters = 32;
+numClasses = numel(classNames);
+
+layers = [
+    imageInputLayer(inputSize)
+    
+    convolution2dLayer(filterSize,numFilters,'DilationFactor',1,'Padding','same')
+    batchNormalizationLayer
+    reluLayer
+    
+    convolution2dLayer(filterSize,numFilters,'DilationFactor',2,'Padding','same')
+    batchNormalizationLayer
+    reluLayer
+    
+    convolution2dLayer(filterSize,numFilters,'DilationFactor',4,'Padding','same')
+    batchNormalizationLayer
+    reluLayer
+    
+    convolution2dLayer(1,numClasses)
+    softmaxLayer
+    pixelClassificationLayer('Classes',classNames,'ClassWeights',classWeights)];
+%%
+layers
+%%
+analyzeNetwork(layers)
+%% 
+% *Train network*
+
+options = trainingOptions('sgdm', ...
+    'MaxEpochs', 100, ...
+    'MiniBatchSize', 64, ... 
+    'InitialLearnRate', 1e-3,...
+    'Plots','training-progress');
+net = trainNetwork(pximdsTrain,layers,options);
+%% 
+% *Test network*
+
+imageFolderTest = fullfile(dataFolder,'testImages');
+imdsTest = imageDatastore(imageFolderTest);
+labelFolderTest = fullfile(dataFolder,'testLabels');
+pxdsTest = pixelLabelDatastore(labelFolderTest,classNames,labels);
+
+% make predictions
+% [pxdsPred,score] = semanticseg(imdsTest,net);
+pxdsPred = semanticseg(imdsTest,net,'MiniBatchSize',32,...
+    'WriteLocation',tempdir);
+
+% evaluate accuracy
+metrics = evaluateSemanticSegmentation(pxdsPred,pxdsTest)
+%%
+metrics.ConfusionMatrix
+%% 
+% *Segment new image*
+
+% test image
+imgTest = imread('triangleTest.jpg');
+figure
+imshow(imgTest)
+% segment
+C = semanticseg(imgTest,net);
+B = labeloverlay(imgTest,C);
+figure
+imshow(B)
+%%
+close all; clear; clc
+%% Image Acquisition Toolbox
+% <https://www.mathworks.com/products/image-acquisition.html https://www.mathworks.com/products/image-acquisition.html> 
+% 
+% Image Acquisition Toolbox™ provides functions and blocks for connecting cameras 
+% to MATLAB and Simulink. It includes a MATLAB app that lets you interactively 
+% detect and configure hardware properties. 
+% 
+% It provides tools and algorithms for:
+%% 
+% * processing in-the-loop
+% * hardware triggering
+% * background acquisition
+% * synchronizing acquisition across multiple devices
+% * ...
+%% 
+% You can generate equivalent MATLAB code to automate the acquisition. 
+%% 
+% Can be used with: 
+% Built-in camera
+%% 
+% * *Image Acquisition Toolbox Support Package for OS Generic Video Interface*
+% * use adaptor '|macvideo|', '|winvideo|', etc.
+% USB Video Class (UVC) compliant webcam
+%% 
+% * *MATLAB Support Package for USB Webcams* 
+% * |webcamlist, webcam|
+% Other hardwares
+%% 
+% * DCAM, GenTL, Matrox frame grabbers, Point Grey, GigE vision, Kinect for 
+% Windows Sensor,  National Instruments frame grabbers, Teledyne DALSA Sapera 
+% cameras, Hamamatsu, QImaging, IP Cameras
+% Demo (built-in camera)
+% Determine the adaptor and device ID, and create a video input object.
+
+vid = videoinput('macvideo', 1);
+%% 
+% Preview the video stream.
+
+preview(vid)
+% closepreview(vid)
+%% 
+% Configure object properties. Specify the color space to return image data.
+
+set(vid, 'ReturnedColorSpace', 'RGB'); 
+get(vid)
+%% 
+% Get a snapshot image.
+
+img = getsnapshot(vid);
+image(img);
+%% 
+% Automate in a for-loop and take snap shot every other second
+
+set(vid, 'ReturnedColorSpace', 'grayscale'); 
+figure;
+n = 4;
+colormap('gray');
+for i = 1:n
+    subplot(n/2,2,i);
+    img = getsnapshot(vid);
+    image(img); % or imshow
+    pause(1)
+end
+% Demo: capture movements
+
+vid = videoinput('macvideo', 1);
+
+vid.TriggerRepeat = 100;
+vid.FrameGrabInterval = 2;
+
+figure
+start(vid) % start acquiring frames
+i = 0;
+while(i<50) 
+    data = getdata(vid,2);
+    diff_im = imabsdiff(data(:,:,:,1),data(:,:,:,2));
+    imshow(diff_im);
+    drawnow % update figure window
+    i = i+1;
+end
+stop(vid)
+%% 
+% Clean up.
+
+delete(vid)
+clear
+close all;
+% References
+%% 
+% # Chen, Liang-Chieh, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and 
+% Alan L. Yuille. "Deeplab: Semantic image segmentation with deep convolutional 
+% nets, atrous convolution, and fully connected crfs." IEEE transactions on pattern 
+% analysis and machine intelligence 40, no. 4 (2018): 834-848.
+%% 
+% _Copyright 2018 The MathWorks, Inc._
+##### SOURCE END #####
+--></body></html>
