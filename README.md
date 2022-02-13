@@ -1,5 +1,5 @@
 # CME292 Advanced MATLAB for Scientific Computing
-### Winter Quarter 2022, offered by Stanford ICME in collaboration with Mathworks
+### Winter Quarter 2022, offered by Stanford ICME in collaboration with MathWorks
 Schedule: Winter 2022, Jan 3rd-Jan 31th, Mon/Wed 5:30-7:00pm 
 
 Location: Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) for detailed information.
@@ -38,6 +38,22 @@ Please see the course [Canvas page](https://canvas.stanford.edu/courses/150589) 
 
 ### Acknolwedgement
 
-The course materials are adapted from a previous version of the course offered by Matthew J. Zahr (ICME alum), and the online resources provided by Mathworks, including the online courses (https://matlabacademy.mathworks.com/) and examples (https://www.mathworks.com/help/examples.html). 
+The course materials are adapted from a previous version of the course offered by ICME alum Matthew J. Zahr (https://mjzahr.github.io/teach-stanford-cme292-spr15.html), and the online resources provided by MathWorks, including the online courses (https://matlabacademy.mathworks.com/) and examples (https://www.mathworks.com/help/examples.html). A more detailed list of sources consulted for the preparation of course materials can be found below.
 
-The materials are reformatted by Xiran Liu (ICME PhD). Special thanks to Dr. Hung Le from ICME and Dr. Reza Fazel-Rezai from Mathworks for guiding the reformation of course materials. 
+The materials are reformatted by Xiran Liu (ICME PhD). Special thanks to Dr. Hung Le from ICME and Dr. Reza Fazel-Rezai from MathWorks for guiding the reformation of course materials. 
+
+### Resources from MathWorks
+* MATLAB for Data Processing and Visualization (https://matlabacademy.mathworks.com/details/matlab-for-data-processing-and-visualization/mlvi)
+* Machine Learning with MATLAB (https://matlabacademy.mathworks.com/details/machine-learning-with-matlab/mlml)
+* Deep Learning with MATLAB (https://matlabacademy.mathworks.com/details/deep-learning-with-matlab/mldl)
+* Signal Processing Onramp (https://matlabacademy.mathworks.com/details/signal-processing-onramp/signalprocessing）
+* Documentation - Volume Visualization (https://www.mathworks.com/help/matlab/volume-visualization.html)
+* Documentation - Strategies for Efficient Use of Memory (https://www.mathworks.com/help/matlab/matlab_prog/strategies-for-efficient-use-of-memory.html)
+* Documentation - Resolve “Out of Memory” Errors (https://www.mathworks.com/help/matlab/matlab_prog/resolving-out-of-memory-errors.html)
+* Documentation - Getting Started with MapReduce (https://www.mathworks.com/help/matlab/import_export/getting-started-with-mapreduce.html)
+* Documentation - Solving Partial Differential Equations (https://www.mathworks.com/help/matlab/math/partial-differential-equations.html)
+* Documentation - Calling Python from MATLAB (https://www.mathworks.com/help/matlab/call-python-libraries.html)
+* Example - Time Series Forecasting Using Deep Learning (https://www.mathworks.com/help/deeplearning/ug/time-series-forecasting-using-deep-learning.html)
+* Example - Semantic Segmentation Using Dilated Convolutions (https://www.mathworks.com/help/vision/ug/semantic-segmentation-using-dilated-convolutions.html)
+* Example - Speaker Identification Using Pitch and MFCC (https://www.mathworks.com/help/audio/ug/speaker-identification-using-pitch-and-mfcc.html)
+* Example - Signal Visualization and Measurements in MATLAB (https://www.mathworks.com/help/dsp/ug/signal-visualization-and-measurements-in-matlab.html)
