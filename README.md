@@ -1,4 +1,5 @@
 # CME292 Advanced MATLAB for Scientific Computing
+[![View Advanced MATLAB for Scientific Computing on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/106675-advanced-matlab-for-scientific-computing)
 ### Winter Quarter 2022, offered by Stanford ICME in collaboration with MathWorks
 Schedule: Winter 2022, Jan 3rd-Jan 31th, Mon/Wed 5:30-7:00pm 
 
