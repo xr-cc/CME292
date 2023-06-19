@@ -14,6 +14,7 @@ Basic knowledge of numerical methods, linear algebra, and machine learning is re
 
 ### Course Syllabus
 The course syllabus for winter 2022 is available [here](cme292-syllabus-winter22.pdf).
+
 The course syllabus for winter 2023 is available [here](cme292-syllabus-winter23.pdf).
 
 ### Topics
