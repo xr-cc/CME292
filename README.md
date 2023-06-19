@@ -1,7 +1,7 @@
 # CME292 Advanced MATLAB for Scientific Computing
 [![View Advanced MATLAB for Scientific Computing on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/106675-advanced-matlab-for-scientific-computing)
 
-**offered by Stanford ICME in collaboration with MathWorks**
+**offered by Stanford ICME (https://icme.stanford.edu) in collaboration with MathWorks (https://www.mathworks.com)**
 
 ### Course Description
 
