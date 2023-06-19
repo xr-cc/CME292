@@ -1,5 +1,6 @@
 # CME292 Advanced MATLAB for Scientific Computing
 [![View Advanced MATLAB for Scientific Computing on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/106675-advanced-matlab-for-scientific-computing)
+
 **offered by Stanford ICME in collaboration with MathWorks**
 
 ### Course Description
@@ -13,7 +14,7 @@ Basic knowledge of numerical methods, linear algebra, and machine learning is re
 
 ### Course Syllabus
 The course syllabus for winter 2022 is available [here](cme292-syllabus-winter22.pdf).
-The course syllabus for winter 2023 is available [here].
+The course syllabus for winter 2023 is available [here](cme292-syllabus-winter23.pdf).
 
 ### Topics
 1. Course Introduction, MATLAB Fundamentals
