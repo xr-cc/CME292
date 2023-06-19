@@ -11,27 +11,20 @@ The goal of this 8-lecture short course is to introduce advanced MATLAB features
 CME 192 (Introduction to MATLAB) or equivalent programming background in other languages is highly recommended prior to taking this course. 
 Basic knowledge of numerical methods, linear algebra, and machine learning is recommended, but not required.
 
-### Course Syllabus (Winter 2022)
+### Course Syllabus
 The course syllabus for winter 2022 is available [here](cme292-syllabus-winter22.pdf).
+The course syllabus for winter 2023 is available [here].
 
 ### Topics
-| Topic | Lecture Notes |
-| --- | --- |
-| MATLAB Fundamentals | [Lecture 1] |
-| Graphics and Data Visualization | [Lecture 2 Part 1] |
-| Efficient Code Writing | [Lecture 2 Part 2] |
-| System and File Manipulation | [Lecture 3 Part 1] |
-| Big Data Handling | [Lecture 3 Part 2] |
-| Applied Math - Numerical Linear Algebra | [Lecture 4 Part 1] |
-|  Applied Math - Numerical Optimization  | [Lecture 4 Part 2] |
-|  Applied Math - Symbolic Toolbox, ODE, and PDE  | [Lecture 4 Part 2]|
-| Statistical and Machine Learning | [Lecture 5 Part 1]|
-| Deep Learning | [Lecture 5 Part 2] |
-| Object Oriented Programming | [Lecture 6 Part 1]|
-| Using MATLAB with Other Programming Languages | [Lecture 6 Part 2]  |
-| Image Processing, Computer Vision, and Image Acquisition | [Lecture 7 Part 1] |
-| Signal Processing, Audio, and DSP System | [Lecture 7 Part 1] |
-| Additional Topics |  |
+1. Course Introduction, MATLAB Fundamentals
+2. Graphics and Data Visualization
+3. File Manipulation, Big Data Handling, Integration with Other Languages
+4. Machine Learning with MATLAB
+5. Applied Math with MATLAB
+6. Object Oriented Programming, Efficient Code Writing
+7. Advanced Tools for Images and Signals
+8. Wrap-Up & Additional Topics
+
 
 ### Acknowledgment
 
